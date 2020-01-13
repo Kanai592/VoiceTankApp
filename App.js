@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
    container:{
     //  flexShrink:1,→うまく作動しない。縦向きにしても席が全部見えるようにしたい
      justifyContent:'center',
-     padding:2
+     padding:1
    },
 
    appbar:{ 
@@ -35,6 +35,19 @@ const styles = StyleSheet.create({
 
     },
    
+ linkbuttons:{
+    position:'absolute',
+    bottom:140,
+    right:10,
+  
+  },
+
+  linkbuttonstitles:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding:10,
+    fontSize:15
+  },
 
 
 });
@@ -49,6 +62,25 @@ export default class VoiceTank extends Component {
 
         <View><Text style={styles.appbartitle}>Let's start Evaluating</Text></View>
         </View>
+
+      <View style={styles.linkbuttons}>
+      
+
+              <View>
+               <Text style={styles.linkbuttonstitles}>席替え</Text>
+              </View>
+
+              <View>
+                <Text style={styles.linkbuttonstitles}>補助簿</Text>
+              </View>
+
+              <View>
+                <Text style={styles.linkbuttonstitles}>一覧</Text>
+              </View>
+
+             </View>
+      
+      
 
 
       <View style={{

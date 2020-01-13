@@ -3,18 +3,54 @@ import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
 const EvaluatingScreen = props ={};
-// return(
-// <View style={styles.screen}>
-// <Text>Let's start Evaluating</Text></View>
-
-const styles = StyleSheet.create({})
 
 
 
-export default class Voicetank extends Component {
+const styles = StyleSheet.create({
+
+   container:{
+    //  flexShrink:1,→うまく作動しない。縦向きにしても席が全部見えるようにしたい
+     justifyContent:'center',
+     padding:2
+   },
+
+   appbar:{ 
+     position: 'relative',
+     backgroundColor:'#99FFFF',
+     height:50,
+     padding:2,
+     justifyContent:'center',
+    
+
+  },
+
+  appbartitle:{
+    textAlign: 'center',
+    color:'black',
+    fontSize:18
+  },
+
+   seats:  {
+     shadowColor:'black'
+
+    },
+   
+
+
+});
+
+export default class VoiceTank extends Component {
   render() {
     return (
-      
+     <View style={styles.container}>
+
+
+        <View style={styles.appbar}>
+
+        <View><Text style={styles.appbartitle}>Let's start Evaluating</Text></View>
+        </View>
+
+
       <View style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -135,7 +171,7 @@ export default class Voicetank extends Component {
 
       </View>
 
-
+      </View>
 
       
 

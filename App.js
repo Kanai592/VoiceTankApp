@@ -31,13 +31,18 @@ const styles = StyleSheet.create({
   },
 
    seats:  {
-     shadowColor:'black'
-
+    //  position:1,
+    //  bottom:3,
+    //  backgroundColor:'white',
+     flexDirection: 'row',
+     justifyContent: 'space-around',
+     padding:20
+    
     },
    
  linkbuttons:{
     position:'absolute',
-    bottom:140,
+    bottom:150,
     right:10,
   
   },
@@ -45,8 +50,8 @@ const styles = StyleSheet.create({
   linkbuttonstitles:{
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding:10,
-    fontSize:15
+    padding:5,
+    fontSize:13
   },
 
 
@@ -83,14 +88,10 @@ export default class VoiceTank extends Component {
       
 
 
-      <View style={{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        padding:45
-      }}>
+      <View style={styles.seats}>
 
         
-        <View style={styles.seats1}>
+        <View style>
             <Button title="seat1" onPress={()=>{}}/>
 
             <Button title="seat2" onPress={()=>{}}/>

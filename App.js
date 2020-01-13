@@ -1,8 +1,17 @@
 
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
-export default class JustifyContentBasics extends Component {
+const EvaluatingScreen = props ={};
+// return(
+// <View style={styles.screen}>
+// <Text>Let's start Evaluating</Text></View>
+
+const styles = StyleSheet.create({})
+
+
+
+export default class Voicetank extends Component {
   render() {
     return (
       
@@ -11,9 +20,9 @@ export default class JustifyContentBasics extends Component {
         justifyContent: 'space-between',
         padding:45
       }}>
-        <View style={{
 
-          }}>
+        
+        <View style={styles.seats1}>
             <Button title="seat1" onPress={()=>{}}/>
 
             <Button title="seat2" onPress={()=>{}}/>
@@ -122,7 +131,7 @@ export default class JustifyContentBasics extends Component {
             <Button title="seat42" onPress={()=>{}}/>
 
             </View>
-
+ 
 
       </View>
 

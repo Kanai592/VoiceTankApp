@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
   },
 
    seats:  {
-    //  position:1,
-    //  bottom:3,
-    //  backgroundColor:'white',
+    
      flexDirection: 'row',
+     maxWidth:'90%',
      justifyContent: 'space-around',
+    //  justifyContent:'flex-start',
      padding:20
     
     },
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
  linkbuttons:{
     position:'absolute',
     bottom:150,
-    right:10,
+    right:20,
   
   },
 
@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding:5,
     fontSize:13
+
   },
 
 

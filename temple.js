@@ -7,4 +7,4 @@ const StartGameScreen = props => {};
 const styles = StyleSheet.create({})
 
 
-export default StartGameScreen;1　
+export default StartGameScreen;

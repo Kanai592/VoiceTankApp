@@ -2,15 +2,15 @@
 import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet} from 'react-native';
 
+import MainNavigation from './App.js';
 
-
-const EvaluatingScreen = props ={};
+const Main = props =>{
 
 
 
 const styles = StyleSheet.create({
 
-   container:{
+   mainbox:{
     //  flexShrink:1,→うまく作動しない。縦向きにしても席が全部見えるようにしたい
      justifyContent:'center',
      padding:1
@@ -65,19 +65,25 @@ const styles = StyleSheet.create({
 
 });
 
-type Props = {};
-export default class Main extends Component<Props> {
+// type Props = {};
+// export default class Main extends Component<Props> {
  
  
-  modal = () => {
-    const { navigation } = this.props
-    navigation.navigate('Modal')
-  }
+  // modal = () => {
+  //   const { navigation } = this.props
+  //   console.log(props)
+  //   navigation.navigate({routeName:'Modal'})
+  // }
 
 
-  render() {
+  // render() {
+
+    // export default function App(){
+
     return (
-     <View style={styles.container}>
+
+      
+     <View style={styles.mainbox}>
 
 
         <View style={styles.appbar}>
@@ -113,7 +119,10 @@ export default class Main extends Component<Props> {
 
         
         <View style>
-            <Button title="seat1" onPress={this.modal}/>
+        
+            <Button title="seat1" onPress={()=> {
+              props.navigation.navigate({routeName:'Modal'});
+              }}/>
 
             <Button title="seat2" onPress={()=>{}}/>
 
@@ -235,6 +244,8 @@ export default class Main extends Component<Props> {
 
     );
   }
-};
+
+  export default Main;
+// };
 
 

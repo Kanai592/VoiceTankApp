@@ -1,17 +1,11 @@
 import React, {Component} from 'react';
 import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
-// import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+
 import{ createStackNavigator} from 'react-navigation-stack';
 
-// type Props = {};
-// export default class ModalExample extends Component<Props> {
-//   render() {
+
 
 const ModalExample = props =>{
-
-    // return (
-
-      // render() {
         return (
          <View style={styles.container}>
     
@@ -24,7 +18,13 @@ const ModalExample = props =>{
          
     
           <View style={styles.evaluationbox}>
-    
+
+
+          <Button title="< Back" onPress={()=> {
+              props.navigation.navigate({routeName:'Main'});
+              }}/>
+
+
           <View><Text style={styles.evaluationboxtitle}>評価基準メモ</Text></View>
     
           
@@ -55,15 +55,7 @@ const ModalExample = props =>{
                   </View>
                 </View>
                 
-    
-               
-    
-               
-    
-             
-    
-    
-             
+      
      
     
           </View>
@@ -85,7 +77,7 @@ const ModalExample = props =>{
     
           </View>
     
-             
+          
     
           </View>
     
@@ -97,11 +89,6 @@ const ModalExample = props =>{
     
         );
       }
-    // };
-
-// <View>
-//   <Text>　評価画面できた！！</Text>
-// </View>
 
 const styles = StyleSheet.create({
 
@@ -195,23 +182,5 @@ const styles = StyleSheet.create({
   });
   
   
-  // export default class Main extends Component<Props> {
-   
-  
-  
-   
-  
-      // <Container>
-      //   <Header>　
-         
-      //     <Body>
-      //       <Title>モーダル完成！！！</Title>
-      //     </Body>
-      //     <Right />
-      //   </Header>
-      // </Container>
-    // );
-  // };
-
 
   export default ModalExample;

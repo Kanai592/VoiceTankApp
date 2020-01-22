@@ -65,20 +65,6 @@ const styles = StyleSheet.create({
 
 });
 
-// type Props = {};
-// export default class Main extends Component<Props> {
- 
- 
-  // modal = () => {
-  //   const { navigation } = this.props
-  //   console.log(props)
-  //   navigation.navigate({routeName:'Modal'})
-  // }
-
-
-  // render() {
-
-    // export default function App(){
 
     return (
 
@@ -95,19 +81,19 @@ const styles = StyleSheet.create({
       
 
               <View>
-      {/* 　　　　　　　buttonでないと動かないのではないか */}
+    
               <Button title="席替え" onPress={()=>{}}/>
-               {/* <Text style={styles.linkbuttonstitles}>席替え</Text> */}
+              
               </View>
 
               <View>
               <Button title="補助簿" onPress={()=>{}}/>
-                {/* <Text style={styles.linkbuttonstitles}>補助簿</Text> */}
+             
               </View>
 
               <View>
               <Button title="一覧" onPress={()=>{}}/>
-                {/* <Text style={styles.linkbuttonstitles}>一覧</Text> */}
+               
               </View>
 
              </View>
@@ -236,16 +222,12 @@ const styles = StyleSheet.create({
 
       </View>
 
-      
-
-      
-
-
+    
 
     );
   }
 
   export default Main;
-// };
+
 
 

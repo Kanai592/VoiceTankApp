@@ -37,15 +37,17 @@ const ModalExample = props =>{
           
           
              <View style={styles.evaluations}>
-                <Button title="A+" onPress={()=>{}}/>
-    
-                <Button title="A" onPress={()=>{}}/>
-    
-                <Button title="B" onPress={()=>{}}/>
-    
-                <Button title="C" onPress={()=>{}}/>
-    
-                <Button title="D" onPress={()=>{}}/>
+
+              <View style={styles.buttonAplus}><Button title="A+" onPress={()=>{}}/></View>
+                
+              <View style={styles.buttonA}><Button title="A " onPress={()=>{}}/></View>
+
+              <View style={styles.buttonB}><Button title="B " onPress={()=>{}}/></View>
+
+              <View style={styles.buttonC}><Button title="C " onPress={()=>{}}/></View>
+
+              <View style={styles.buttonD}><Button title="D " onPress={()=>{}}/></View>
+            
     
                 </View>
     
@@ -57,7 +59,8 @@ const ModalExample = props =>{
                 <TextInput style={{ height: 35, borderColor: 'gray', borderWidth: 1 }}></TextInput>
                 
                   <View style={styles.attendancebox}>
-                  <Button title="欠席" onPress={()=>{}}/>
+                  <View style={styles.absentbutton}><Button title="欠席(absent)" onPress={()=>{}}/></View>
+            
     
                   </View>
                 </View>
@@ -145,7 +148,75 @@ const styles = StyleSheet.create({
       
       },
   
+      buttonAplus:{
+
+      width:35,
+      height:35,
+      backgroundColor:'orange',
+      margin:2
+
+      },
+
+      buttonA:{
+
+        width:35,
+        height:35,
+        backgroundColor:'orange',
+        margin:2
+  
+        },
+
+      buttonB:{
+
+        width:35,
+        height:35,
+        backgroundColor:'orange',
+        margin:2
     
+        },
+      
+      buttonC:{
+
+        width:35,
+        height:35,
+        backgroundColor:'orange',
+        margin:2    
+      
+          },
+
+      buttonC:{
+
+         width:35,
+         height:35,
+         backgroundColor:'orange',
+         margin:2    
+          
+          },
+
+      buttonD:{
+
+         width:35,
+         height:35,
+         backgroundColor:'orange',
+         margin:2    
+             
+          },
+
+      absentbutton:{
+
+          width:197,
+          height:35,
+          backgroundColor:'lightblue',
+          margin:2    
+             
+          },
+
+
+        
+
+  
+
+
 
      
   

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
+import { View, Text, StyleSheet, Button, TextInput, Modal } from 'react-native';
 
 import{ createStackNavigator} from 'react-navigation-stack';
 
@@ -7,26 +7,34 @@ import{ createStackNavigator} from 'react-navigation-stack';
 
 const ModalExample = props =>{
         return (
+
+          <Modal visible = {props.visible} animationType="slide">
          <View style={styles.container}>
     
     
             <View style={styles.appbar}>
-    
-            <View><Text style={styles.appbartitle}>評価</Text></View>
-            </View>
-    
-         
-    
-          <View style={styles.evaluationbox}>
 
-
-          <Button title="< Back" onPress={()=> {
+            <Button title="< Back" onPress={()=> {
               props.navigation.navigate({routeName:'Main'});
               }}/>
 
+            <View>
+           
+              <Text style={styles.appbartitle}> 評価</Text>
 
-          <View><Text style={styles.evaluationboxtitle}>評価基準メモ</Text></View>
+              </View>
+
+            </View>
     
+         
+
+            <View style={styles.evaluationboxheader}>
+              <View><Text style={styles.evaluationboxtitle}>評価基準メモ</Text></View>
+               </View> 
+    
+          <View style={styles.evaluationbox}>
+   
+          
           
              <View style={styles.evaluations}>
                 <Button title="A+" onPress={()=>{}}/>
@@ -51,7 +59,6 @@ const ModalExample = props =>{
                   <View style={styles.attendancebox}>
                   <Button title="欠席" onPress={()=>{}}/>
     
-                  <Button title="出席" onPress={()=>{}}/>
                   </View>
                 </View>
                 
@@ -81,7 +88,7 @@ const ModalExample = props =>{
     
           </View>
     
-          
+          </Modal>
     
           
     
@@ -94,11 +101,12 @@ const styles = StyleSheet.create({
 
      container:{
        justifyContent:'center',
-       padding:1
+       padding:8
      },
   
      appbar:{ 
-       position: 'relative',
+       flexDirection: 'row',
+      //  position: 'relative',
        backgroundColor:'white',
        height:50,
        padding:2,
@@ -115,26 +123,37 @@ const styles = StyleSheet.create({
       fontSize:18
     },
   
+    evaluationboxheader:{
+      // position:'',
+      padding:20,
+      marginBottom:10
+
+    },
+
+    evaluationboxtitle:{
+      position:'absolute',
+      fontSize:15
+    },
+
      evaluationbox:  {
       
        flexDirection: 'row',
-       maxWidth:'90%',
+       maxWidth:'100%',
        justifyContent: 'space-around',
-       padding:20
+       padding:20,
+       
       
       },
   
-      evaluationboxtitle:{
-        position:'absolute',
-       
-  
-      },
+    
+
+     
   
       notebox:{
       flexDirection: 'column',
-       maxWidth:'90%',
+       width:200,
        justifyContent: 'space-between',
-       padding:20
+       padding:1
       },
   
       attendancebox:{

@@ -39,8 +39,9 @@ const styles = StyleSheet.create({
      flexDirection: 'row',
      maxWidth:'90%',
      justifyContent: 'space-around',
-    //  justifyContent:'flex-start',
-     padding:20
+     padding:20,
+
+     
     
     },
 
@@ -59,6 +60,8 @@ const styles = StyleSheet.create({
         fontSize:12,
         color:"black"
       },
+
+
 
 
 
@@ -96,7 +99,9 @@ const styles = StyleSheet.create({
 
         <View><Text style={styles.appbartitle}>Let's start Evaluating</Text></View>
         </View>
-
+<TouchableOpacity>
+  
+</TouchableOpacity>
       <View style={styles.linkbuttons}>
       
 
@@ -140,7 +145,7 @@ const styles = StyleSheet.create({
 
               </TouchableOpacity>
 
-            <Button title="seat2" onPress={()=>{}}/>
+            <Button title="seat2" onPress={() =>{}}/>
 
             <Button title="seat3" onPress={()=>{}}/>
 

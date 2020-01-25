@@ -283,6 +283,11 @@ const styles = StyleSheet.create({
                 color:"black"
               },
     
+　　　　// 欠席ボタン
+
+            attendancebox:{
+                flexDirection: 'row',
+              },
 
             buttonabsent:{
 
@@ -305,12 +310,7 @@ const styles = StyleSheet.create({
 
 
         
-
-  
-
-
-
-     
+// 　評価基準メモ
   
       notebox:{
       flexDirection: 'column',
@@ -319,10 +319,8 @@ const styles = StyleSheet.create({
        padding:1
       },
   
-      attendancebox:{
-        flexDirection: 'row',
-      },
-  
+
+// 生徒情報
       studentname:{
         position: 'relative',
         backgroundColor:'white',
@@ -341,7 +339,7 @@ const styles = StyleSheet.create({
         fontSize:18
       },
   
-  
+  // 録音機能
       recordingbox:{
         position: 'relative',
         backgroundColor:'white',

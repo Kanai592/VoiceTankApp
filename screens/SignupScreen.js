@@ -4,7 +4,7 @@ import { TouchableOpacity, TouchableHighlight } from 'react-native-gesture-handl
 
 import{ createStackNavigator} from 'react-navigation-stack';
 
-class LoginScreen extends React.Component {
+class SignupScreen extends React.Component {
  
 
     render(){
@@ -12,7 +12,7 @@ class LoginScreen extends React.Component {
 
         <View style={styles.container}> 
            <Text style={styles.title}> 
-            Voice Tank ログイン
+            メンバー登録画面
            </Text>
         
 
@@ -25,7 +25,7 @@ class LoginScreen extends React.Component {
               props.navigation.navigate({routeName:'Main'});
              }}> 
                 
-                <View><Text style={styles.buttontitle}>ログインする</Text></View>
+                <View><Text style={styles.buttontitle}>送信する</Text></View>
 
             </TouchableOpacity>
             
@@ -88,4 +88,4 @@ class LoginScreen extends React.Component {
 
 
 
-export default LoginScreen;
+export default SignupScreen;

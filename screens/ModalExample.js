@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, Button, TextInput, Modal } from 'react-native';
+import { View, Text, StyleSheet, Button, TextInput, Modal, TouchableOpacity , TouchableHighlight } from 'react-native';
 
 import{ createStackNavigator} from 'react-navigation-stack';
 
@@ -9,16 +9,20 @@ const ModalExample = props =>{
         return (
 
           <Modal visible = {props.visible} animationType="slide">
+
          <View style={styles.container}>
-    
     
             <View style={styles.appbar}>
 
-            <Button title="< Back" onPress={()=> {
+             <View style={styles.backbutton}>
+
+             <Button title="< Back" onPress={()=> {
               props.navigation.navigate({routeName:'Main'});
               }}/>
+             </View>
+            
 
-            <View>
+              <View>
            
               <Text style={styles.appbartitle}> 評価</Text>
 
@@ -38,16 +42,53 @@ const ModalExample = props =>{
           
              <View style={styles.evaluations}>
 
-              <View style={styles.buttonAplus}><Button title="A+" onPress={()=>{}}/></View>
-                
-              <View style={styles.buttonA}><Button title="A " onPress={()=>{}}/></View>
+             <TouchableOpacity style={styles.buttonAplus}
+                               activeOpacity={0.2} 
+                               onPress={()=>{}}>
 
-              <View style={styles.buttonB}><Button title="B " onPress={()=>{}}/></View>
+             <View><Text style={styles.Aplus}>A+</Text></View>
+    
+             </TouchableOpacity>
 
-              <View style={styles.buttonC}><Button title="C " onPress={()=>{}}/></View>
+             <TouchableOpacity style={styles.buttonA}
+                               activeOpacity={0.2} 
+                               onPress={()=>{}}>
 
-              <View style={styles.buttonD}><Button title="D " onPress={()=>{}}/></View>
+             <View><Text style={styles.A}>A</Text></View>
+    
+             </TouchableOpacity>
+
+             <TouchableOpacity style={styles.buttonB}
+                               activeOpacity={0.2} 
+                               onPress={()=>{}}>
+
+             <View><Text style={styles.B}>B</Text></View>
+    
+             </TouchableOpacity>
             
+
+             <TouchableOpacity style={styles.buttonC}
+                               activeOpacity={0.2} 
+                               onPress={()=>{}}>
+
+             <View><Text style={styles.B}>C</Text></View>
+    
+             </TouchableOpacity>
+
+
+             <TouchableOpacity style={styles.buttonD}
+                               activeOpacity={0.2} 
+                               onPress={()=>{}}>
+
+             <View><Text style={styles.B}>D</Text></View>
+    
+             </TouchableOpacity>
+            
+            
+ 
+
+
+
     
                 </View>
     
@@ -58,11 +99,14 @@ const ModalExample = props =>{
                 <TextInput style={{ height: 35, borderColor: 'gray', borderWidth: 1 }}></TextInput>
                 <TextInput style={{ height: 35, borderColor: 'gray', borderWidth: 1 }}></TextInput>
                 
-                  <View style={styles.attendancebox}>
-                  <View style={styles.absentbutton}><Button title="欠席(absent)" onPress={()=>{}}/></View>
-            
+                  
+                <TouchableOpacity style={styles.buttonabsent}
+                               activeOpacity={0.2} 
+                               onPress={()=>{}}>
+
+             <View><Text style={styles.absent}>欠席(absent)</Text></View>
     
-                  </View>
+             </TouchableOpacity>
                 </View>
                 
       
@@ -119,8 +163,16 @@ const styles = StyleSheet.create({
        shadowOpacity:0.3,
        shadowRadius:6,
     },
+
+    backbutton:{
+      // ボタンの位置修正必要
+      justifyContent:"space-evenly",
+       position:'relative'
+       
+    },
   
     appbartitle:{
+     
       textAlign: 'center',
       color:'black',
       fontSize:18
@@ -148,8 +200,12 @@ const styles = StyleSheet.create({
       
       },
   
+
+    // オレンジ評価ボタンのスタイリング
       buttonAplus:{
 
+      alignItems: 'center',
+      justifyContent:'center',
       width:35,
       height:35,
       backgroundColor:'orange',
@@ -157,59 +213,95 @@ const styles = StyleSheet.create({
 
       },
 
+      Aplus:{
+        fontSize:18,
+        color:"black"
+      },
+
       buttonA:{
 
+        alignItems: 'center',
+        justifyContent:'center',
         width:35,
         height:35,
         backgroundColor:'orange',
         margin:2
   
         },
-
-      buttonB:{
-
-        width:35,
-        height:35,
-        backgroundColor:'orange',
-        margin:2
-    
+  
+        A:{
+          fontSize:18,
+          color:"black"
         },
-      
-      buttonC:{
 
-        width:35,
-        height:35,
-        backgroundColor:'orange',
-        margin:2    
-      
-          },
+        buttonB:{
 
-      buttonC:{
-
-         width:35,
-         height:35,
-         backgroundColor:'orange',
-         margin:2    
-          
-          },
-
-      buttonD:{
-
-         width:35,
-         height:35,
-         backgroundColor:'orange',
-         margin:2    
-             
-          },
-
-      absentbutton:{
-
-          width:197,
+          alignItems: 'center',
+          justifyContent:'center',
+          width:35,
           height:35,
-          backgroundColor:'lightblue',
-          margin:2    
-             
+          backgroundColor:'orange',
+          margin:2
+    
           },
+    
+          B:{
+            fontSize:18,
+            color:"black"
+          },
+
+
+          buttonC:{
+
+            alignItems: 'center',
+            justifyContent:'center',
+            width:35,
+            height:35,
+            backgroundColor:'orange',
+            margin:2
+            },
+      
+            C:{
+              fontSize:18,
+              color:"black"
+            },
+
+
+            buttonD:{
+
+            alignItems: 'center',
+            justifyContent:'center',
+            width:35,
+            height:35,
+            backgroundColor:'orange',
+            margin:2
+        
+            },
+        
+              D:{
+                fontSize:18,
+                color:"black"
+              },
+    
+
+            buttonabsent:{
+
+              alignItems: 'center',
+              justifyContent:'center',
+              width:197,
+              height:35,
+              backgroundColor:'lightblue',
+              margin:2
+              },
+
+  
+           absent:{
+
+            fontSize:18,
+            color:'blue',
+            margin:2    
+              
+            },
 
 
         

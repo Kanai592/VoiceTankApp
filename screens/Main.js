@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet} from 'react-native';
+import { View, Text, Button, StyleSheet, TouchableOpacity} from 'react-native';
 
-import MainNavigation from './App.js';
+import MainNavigation from '../App.js';
 
 const Main = props =>{
 
@@ -43,6 +43,26 @@ const styles = StyleSheet.create({
      padding:20
     
     },
+
+    seat1box:{
+
+      alignItems: 'center',
+      justifyContent:'center',
+      width:60,
+      height:35,
+      backgroundColor:'#DDDDDD',
+      margin:2,
+      borderRadius:10
+      },
+
+      seat1:{
+        fontSize:12,
+        color:"black"
+      },
+
+
+
+
    
  linkbuttons:{
     position:'absolute',
@@ -80,6 +100,7 @@ const styles = StyleSheet.create({
       <View style={styles.linkbuttons}>
       
 
+
               <View>
     
               <Button title="席替え" onPress={()=>{}}/>
@@ -105,10 +126,19 @@ const styles = StyleSheet.create({
 
         
         <View style>
-        
-            <Button title="seat1" onPress={()=> {
+            
+
+            <TouchableOpacity style={styles. seat1box}
+                                    activeOpacity={0.8} 
+                                    onPress={()=>{
               props.navigation.navigate({routeName:'Modal'});
-              }}/>
+
+              }}>
+
+              <View><Text style={styles.seat1}>出席番号</Text></View>
+
+
+              </TouchableOpacity>
 
             <Button title="seat2" onPress={()=>{}}/>
 

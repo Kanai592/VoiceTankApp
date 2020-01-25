@@ -22,7 +22,7 @@ class LoginScreen extends React.Component {
      
             <TouchableOpacity style ={styles.button} 
                                 onPress={()=>{
-              props.navigation.navigate({routeName:'Main'});
+              this.props.navigation.navigate({routeName:'Main'});
              }}> 
                 
                 <View><Text style={styles.buttontitle}>ログインする</Text></View>
@@ -39,6 +39,8 @@ class LoginScreen extends React.Component {
 
             }
             }
+
+            
     const styles = StyleSheet.create({
 
             container:{

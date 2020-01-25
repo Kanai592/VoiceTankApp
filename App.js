@@ -12,9 +12,10 @@ import SignupScreen from './screens/SignupScreen';
 
 
 const App = createStackNavigator({
-    Main:{ screen: Main},
+  Login:{ screen: LoginScreen },  
+  Main:{ screen: Main},
     Modal: { screen: ModalExample },
-    Login:{ screen: LoginScreen },
+    
     Signup:{ screen: SignupScreen },
     
 },{

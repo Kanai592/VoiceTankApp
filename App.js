@@ -1,24 +1,29 @@
-import React, {Component} from 'react';
-import { createStackNavigator } from 'react-navigation-stack';
-import { StackNavigator } from 'react-navigation-stack';
+import{ StyleSheet, View} from 'react-native';
 import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 import Main from './screens/Main';
-import ModalExample from './screens/ModalExample'
-import LoginScreen from './screens/LoginScreen'
-
-// import {firebase} from 'firebase'
-
+import ModalExample from './screens/ModalExample';
+import LoginScreen from './screens/LoginScreen';
+import SignupScreen from './screens/SignupScreen';
 
 
-const MainNavigation = createStackNavigator({
-  　Login:{ screen: LoginScreen },
-    Main: { screen: Main },
+
+
+
+const App = createStackNavigator({
+    Main:{ screen: Main},
     Modal: { screen: ModalExample },
+    Login:{ screen: LoginScreen },
+    Signup:{ screen: SignupScreen },
+    
+},{
+    defaultnavigationOption:{ 
+    headerTitle:'Voice Tank',
+    headerTitleStyle:{
+    backgroundColor:'#77EEFF',
+    },
   },
+} );
 
-  {initialRouteName: 'Main', mode: 'card', headerMode: 'none'
-
-});
-
-export default createAppContainer(MainNavigation);
+    export default createAppContainer(App);

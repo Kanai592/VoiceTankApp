@@ -194,7 +194,7 @@ class Main extends React.Component {
 
             appbar:{ 
               position: 'relative',
-              backgroundColor:'#99FFFF',
+              backgroundColor:'#4BDAE0',
               height:50,
               padding:2,
               justifyContent:'center',

@@ -1,11 +1,43 @@
 import React, {Component} from 'react';
+import firebase from 'firebase';
 import { View, Text, StyleSheet, Button, TextInput, } from 'react-native';
 import { TouchableOpacity, TouchableHighlight } from 'react-native-gesture-handler';
 
-import{ createStackNavigator} from 'react-navigation-stack';
+
+
+
+
 
 class LoginScreen extends React.Component {
  
+
+
+
+
+
+    state = {
+      email:'',
+      password:'',
+
+    }
+
+
+    handleSubmit(){
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+
+        .then((error)=>{
+            // this.props.navigation.navigate('Main')
+            console.log(success);
+            
+            })
+            .catch((error)=>{
+            console.log(error);
+            });
+
+
+
+
+    }
 
     render(){
     return(
@@ -16,14 +48,27 @@ class LoginScreen extends React.Component {
            </Text>
         
 
-           <TextInput style={styles.input} value="Email Address"/>
-           <TextInput style={styles.input} value="Password"/>
+           <TextInput style={styles.input} 
+                      value ={this.state.email} 
+                      onChangeText={(text)=>{this.setState({email:text});}}
+                      autoCapitalize='none'
+                      autoCorrect={false}
+                      placeholder="Email Adress"
+                      />
+
+           <TextInput style={styles.input} 
+                      value ={this.state.password}
+                      onChangeText={(text)=>{this.setState({password:text});}}
+                      autoCapitalize='none'
+                      autoCorrect={false}
+                      placeholder="Password"
+                      secureTextEntry
+                      />
+                      
      
      
             <TouchableOpacity style ={styles.button} 
-                                onPress={()=>{
-              this.props.navigation.navigate({routeName:'Main'});
-             }}> 
+                                onPress={this.handleSubmit.bind(this)}> 
                 
                 <View><Text style={styles.buttontitle}>ログインする</Text></View>
 
@@ -40,13 +85,14 @@ class LoginScreen extends React.Component {
             }
             }
 
-            
+
     const styles = StyleSheet.create({
 
             container:{
                 flex:1,
                 width:'100%',
-                backgroundColor:'#77EEFF'
+                backgroundColor:'#4BDAE0',
+                padding:30
 
             },
 

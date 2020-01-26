@@ -6,18 +6,19 @@ import { View, Text, StyleSheet, Button, TextInput, Modal, TouchableOpacity , To
 const ModalExample = props =>{
         return (
 
-          <Modal visible = {props.visible} animationType="slide">
+          // <Modal visible = {props.visible} animationType="slide">
 
          <View style={styles.container}>
     
             <View style={styles.appbar}>
 
-             <View style={styles.backbutton}>
+
+             {/* <View style={styles.backbutton}>
 
              <Button title="< Back" onPress={()=> {
               props.navigation.navigate({routeName:'Main'});
               }}/>
-             </View>
+             </View> */}
             
 
               <View>
@@ -133,7 +134,7 @@ const ModalExample = props =>{
     
           </View>
     
-          </Modal>
+          // </Modal>
     
           
     
@@ -150,8 +151,8 @@ const styles = StyleSheet.create({
      },
   
      appbar:{ 
-       flexDirection: 'row',
-      //  position: 'relative',
+      alignItems: 'center',
+      justifyContent:'center',
        backgroundColor:'white',
        height:50,
        padding:2,
@@ -162,16 +163,15 @@ const styles = StyleSheet.create({
        shadowRadius:6,
     },
 
-    backbutton:{
-      // ボタンの位置修正必要
-      justifyContent:"space-evenly",
-       position:'relative'
+    // backbutton:{
+    //   // ボタンの位置修正必要
+    //   justifyContent:"space-evenly",
+    //    position:'relative'
        
-    },
+    // },
   
     appbartitle:{
-     
-      textAlign: 'center',
+    
       color:'black',
       fontSize:18
     },

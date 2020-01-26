@@ -1,15 +1,19 @@
 import React from 'react';
 import firebase from 'firebase';
 
+
+// require("firebase/firestore");
+
+
+
 import{ StyleSheet, View} from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import Main from './screens/Main';
-import ModalExample from './screens/ModalExample';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
-
+import Modal from './screens/Modal';
 
 import ENV from './env.json';
 
@@ -31,10 +35,13 @@ firebase.initializeApp(firebaseConfig);
 
 
 const App = createStackNavigator({
+ 
     Login:{ screen: LoginScreen }, 
     Signup:{ screen: SignupScreen },
     Main:{ screen: Main},
-    Modal: { screen: ModalExample },
+    Modal:{ screen: Modal},
+
+   
    
     
 },{

@@ -1,87 +1,90 @@
-import React, {Component} from 'react';
-import { View, Text, StyleSheet, Button, TextInput, Modal, TouchableOpacity , TouchableHighlight } from 'react-native';
+// import React, {Component} from 'react';
+// import { View, Text, StyleSheet, Button, TextInput, Modal, TouchableOpacity , TouchableHighlight } from 'react-native';
 
 
 
-const ModalExample = props =>{
-        return (
+// const ModalExample = props =>{
 
-          // <Modal visible = {props.visible} animationType="slide">
+ 
 
-         <View style={styles.container}>
+//         return (
+
+//           // <Modal visible = {props.visible} animationType="slide">
+
+//          <View style={styles.container}>
     
-            <View style={styles.appbar}>
+//             <View style={styles.appbar}>
 
 
-             {/* <View style={styles.backbutton}>
+//              {/* <View style={styles.backbutton}>
 
-             <Button title="< Back" onPress={()=> {
-              props.navigation.navigate({routeName:'Main'});
-              }}/>
-             </View> */}
+//              <Button title="< Back" onPress={()=> {
+//               props.navigation.navigate({routeName:'Main'});
+//               }}/>
+//              </View> */}
             
 
-              <View>
+//               <View>
            
-              <Text style={styles.appbartitle}> 評価</Text>
+//               <Text style={styles.appbartitle}> 評価</Text>
 
-              </View>
+//               </View>
 
-            </View>
+//             </View>
     
          
 
-            <View style={styles.evaluationboxheader}>
-              <View><Text style={styles.evaluationboxtitle}>評価基準メモ</Text></View>
-               </View> 
+//             <View style={styles.evaluationboxheader}>
+//               <View><Text style={styles.evaluationboxtitle}>評価基準メモ</Text></View>
+//                </View> 
     
-          <View style={styles.evaluationbox}>
+//           <View style={styles.evaluationbox}>
    
           
           
-             <View style={styles.evaluations}>
+//              <View style={styles.evaluations}>
 
-             <TouchableOpacity style={styles.buttonAplus}
-                               activeOpacity={0.2} 
-                               onPress={()=>{}}>
+//              <TouchableOpacity style={styles.buttonAplus}
+//                                activeOpacity={0.2} 
+//                                onPress={()=>{}}>
 
-             <View><Text style={styles.Aplus}>A+</Text></View>
+//              <View><Text style={styles.Aplus}>A+</Text></View>
     
-             </TouchableOpacity>
+//              </TouchableOpacity>
 
-             <TouchableOpacity style={styles.buttonA}
-                               activeOpacity={0.2} 
-                               onPress={()=>{}}>
+//              <TouchableOpacity style={styles.buttonA}
+//                                activeOpacity={0.2} 
+//                                onPress={()=>{}}>
 
-             <View><Text style={styles.A}>A</Text></View>
+//              <View><Text style={styles.A}>A</Text></View>
     
-             </TouchableOpacity>
+//              </TouchableOpacity>
 
-             <TouchableOpacity style={styles.buttonB}
-                               activeOpacity={0.2} 
-                               onPress={()=>{}}>
+//              <TouchableOpacity style={styles.buttonB}
+//                                activeOpacity={0.2} 
+//                                onPress={()=>{}}>
 
-             <View><Text style={styles.B}>B</Text></View>
+//              <View><Text style={styles.B}>B</Text></View>
     
-             </TouchableOpacity>
+//              </TouchableOpacity>
             
 
-             <TouchableOpacity style={styles.buttonC}
-                               activeOpacity={0.2} 
-                               onPress={()=>{}}>
+//              <TouchableOpacity style={styles.buttonC}
+//                                activeOpacity={0.2} 
+//                                onPress={()=>{}}>
 
-             <View><Text style={styles.B}>C</Text></View>
+//              <View><Text style={styles.B}>C</Text></View>
     
-             </TouchableOpacity>
+//              </TouchableOpacity>
 
 
-             <TouchableOpacity style={styles.buttonD}
-                               activeOpacity={0.2} 
-                               onPress={()=>{}}>
+//              <TouchableOpacity style={styles.buttonD}
+//                                activeOpacity={0.2} 
+//                                onPress={()=>{}}>
 
-             <View><Text style={styles.B}>D</Text></View>
+//              <View><Text style={styles.B}>D</Text></View>
     
-             </TouchableOpacity>
+//              </TouchableOpacity>
             
             
  
@@ -89,276 +92,276 @@ const ModalExample = props =>{
 
 
     
-                </View>
+//                 </View>
     
     
-                <View style={styles.notebox}>
-                <TextInput style={{ height: 35, borderColor: 'gray', borderWidth: 1 }}></TextInput>
-                <TextInput style={{ height: 35, borderColor: 'gray', borderWidth: 1 }}></TextInput>
-                <TextInput style={{ height: 35, borderColor: 'gray', borderWidth: 1 }}></TextInput>
-                <TextInput style={{ height: 35, borderColor: 'gray', borderWidth: 1 }}></TextInput>
+//                 <View style={styles.notebox}>
+//                 <TextInput style={{ height: 35, borderColor: 'gray', borderWidth: 1 }}></TextInput>
+//                 <TextInput style={{ height: 35, borderColor: 'gray', borderWidth: 1 }}></TextInput>
+//                 <TextInput style={{ height: 35, borderColor: 'gray', borderWidth: 1 }}></TextInput>
+//                 <TextInput style={{ height: 35, borderColor: 'gray', borderWidth: 1 }}></TextInput>
                 
                   
-                <TouchableOpacity style={styles.buttonabsent}
-                               activeOpacity={0.2} 
-                               onPress={()=>{}}>
+//                 <TouchableOpacity style={styles.buttonabsent}
+//                                activeOpacity={0.2} 
+//                                onPress={()=>{}}>
 
-             <View><Text style={styles.absent}>欠席(absent)</Text></View>
+//              <View><Text style={styles.absent}>欠席(absent)</Text></View>
     
-             </TouchableOpacity>
-                </View>
+//              </TouchableOpacity>
+//                 </View>
                 
       
      
     
-          </View>
+//           </View>
     
-          {/* ここから生徒情報 */}
-              <View style={styles.studentname}>
+//           {/* ここから生徒情報 */}
+//               <View style={styles.studentname}>
           
-             <View><Text style={styles.studentnametitle}>#07   叶　隆之介</Text></View>
+//              <View><Text style={styles.studentnametitle}>#07   叶　隆之介</Text></View>
     
-             </View>
+//              </View>
     
-             <View style={styles.recordingbox}>
+//              <View style={styles.recordingbox}>
           
-              <View>
+//               <View>
                
-               <Button title="🎤" onPress={()=>{}}/>
-               <Text style={styles.micophoneicon}>Tap to Record</Text>
-              </View>
+//                <Button title="🎤" onPress={()=>{}}/>
+//                <Text style={styles.micophoneicon}>Tap to Record</Text>
+//               </View>
     
-          </View>
-    
-          
-    
-          </View>
-    
-          // </Modal>
+//           </View>
     
           
     
+//           </View>
+    
+//           // </Modal>
+    
+          
     
     
-        );
-      }
+    
+//         );
+//       }
 
-const styles = StyleSheet.create({
+// const styles = StyleSheet.create({
 
-     container:{
-       justifyContent:'center',
-       padding:8
-     },
+//      container:{
+//        justifyContent:'center',
+//        padding:8
+//      },
   
-     appbar:{ 
-      alignItems: 'center',
-      justifyContent:'center',
-       backgroundColor:'white',
-       height:50,
-       padding:2,
-       justifyContent:'center',
-       shadowColor:'black',
-       shadowOffset:{width:0, height:2},
-       shadowOpacity:0.3,
-       shadowRadius:6,
-    },
+//      appbar:{ 
+//       alignItems: 'center',
+//       justifyContent:'center',
+//        backgroundColor:'white',
+//        height:50,
+//        padding:2,
+//        justifyContent:'center',
+//        shadowColor:'black',
+//        shadowOffset:{width:0, height:2},
+//        shadowOpacity:0.3,
+//        shadowRadius:6,
+//     },
 
-    // backbutton:{
-    //   // ボタンの位置修正必要
-    //   justifyContent:"space-evenly",
-    //    position:'relative'
+//     // backbutton:{
+//     //   // ボタンの位置修正必要
+//     //   justifyContent:"space-evenly",
+//     //    position:'relative'
        
-    // },
+//     // },
   
-    appbartitle:{
+//     appbartitle:{
     
-      color:'black',
-      fontSize:18
-    },
+//       color:'black',
+//       fontSize:18
+//     },
   
-    evaluationboxheader:{
-      // position:'',
-      padding:20,
-      marginBottom:10
+//     evaluationboxheader:{
+//       // position:'',
+//       padding:20,
+//       marginBottom:10
 
-    },
+//     },
 
-    evaluationboxtitle:{
-      position:'absolute',
-      fontSize:15
-    },
+//     evaluationboxtitle:{
+//       position:'absolute',
+//       fontSize:15
+//     },
 
-     evaluationbox:  {
+//      evaluationbox:  {
       
-       flexDirection: 'row',
-       maxWidth:'100%',
-       justifyContent: 'space-around',
-       padding:20,
+//        flexDirection: 'row',
+//        maxWidth:'100%',
+//        justifyContent: 'space-around',
+//        padding:20,
        
       
-      },
+//       },
   
 
-    // オレンジ評価ボタンのスタイリング
-      buttonAplus:{
+//     // オレンジ評価ボタンのスタイリング
+//       buttonAplus:{
 
-      alignItems: 'center',
-      justifyContent:'center',
-      width:35,
-      height:35,
-      backgroundColor:'orange',
-      margin:2
+//       alignItems: 'center',
+//       justifyContent:'center',
+//       width:35,
+//       height:35,
+//       backgroundColor:'orange',
+//       margin:2
 
-      },
+//       },
 
-      Aplus:{
-        fontSize:18,
-        color:"black"
-      },
+//       Aplus:{
+//         fontSize:18,
+//         color:"black"
+//       },
 
-      buttonA:{
+//       buttonA:{
 
-        alignItems: 'center',
-        justifyContent:'center',
-        width:35,
-        height:35,
-        backgroundColor:'orange',
-        margin:2
+//         alignItems: 'center',
+//         justifyContent:'center',
+//         width:35,
+//         height:35,
+//         backgroundColor:'orange',
+//         margin:2
   
-        },
+//         },
   
-        A:{
-          fontSize:18,
-          color:"black"
-        },
+//         A:{
+//           fontSize:18,
+//           color:"black"
+//         },
 
-        buttonB:{
+//         buttonB:{
 
-          alignItems: 'center',
-          justifyContent:'center',
-          width:35,
-          height:35,
-          backgroundColor:'orange',
-          margin:2
+//           alignItems: 'center',
+//           justifyContent:'center',
+//           width:35,
+//           height:35,
+//           backgroundColor:'orange',
+//           margin:2
     
-          },
+//           },
     
-          B:{
-            fontSize:18,
-            color:"black"
-          },
+//           B:{
+//             fontSize:18,
+//             color:"black"
+//           },
 
 
-          buttonC:{
+//           buttonC:{
 
-            alignItems: 'center',
-            justifyContent:'center',
-            width:35,
-            height:35,
-            backgroundColor:'orange',
-            margin:2
-            },
+//             alignItems: 'center',
+//             justifyContent:'center',
+//             width:35,
+//             height:35,
+//             backgroundColor:'orange',
+//             margin:2
+//             },
       
-            C:{
-              fontSize:18,
-              color:"black"
-            },
+//             C:{
+//               fontSize:18,
+//               color:"black"
+//             },
 
 
-            buttonD:{
+//             buttonD:{
 
-            alignItems: 'center',
-            justifyContent:'center',
-            width:35,
-            height:35,
-            backgroundColor:'orange',
-            margin:2
+//             alignItems: 'center',
+//             justifyContent:'center',
+//             width:35,
+//             height:35,
+//             backgroundColor:'orange',
+//             margin:2
         
-            },
+//             },
         
-              D:{
-                fontSize:18,
-                color:"black"
-              },
+//               D:{
+//                 fontSize:18,
+//                 color:"black"
+//               },
     
-　　　　// 欠席ボタン
+// 　　　　// 欠席ボタン
 
-            attendancebox:{
-                flexDirection: 'row',
-              },
+//             attendancebox:{
+//                 flexDirection: 'row',
+//               },
 
-            buttonabsent:{
+//             buttonabsent:{
 
-              alignItems: 'center',
-              justifyContent:'center',
-              width:197,
-              height:35,
-              backgroundColor:'lightblue',
-              margin:2
-              },
+//               alignItems: 'center',
+//               justifyContent:'center',
+//               width:197,
+//               height:35,
+//               backgroundColor:'lightblue',
+//               margin:2
+//               },
 
   
-           absent:{
+//            absent:{
 
-            fontSize:18,
-            color:'blue',
-            margin:2    
+//             fontSize:18,
+//             color:'blue',
+//             margin:2    
               
-            },
+//             },
 
 
         
-// 　評価基準メモ
+// // 　評価基準メモ
   
-      notebox:{
-      flexDirection: 'column',
-       width:200,
-       justifyContent: 'space-between',
-       padding:1
-      },
-  
-
-// 生徒情報
-      studentname:{
-        position: 'relative',
-        backgroundColor:'white',
-        height:50,
-        padding:2,
-        justifyContent:'center',
-        shadowColor:'black',
-        shadowOffset:{width:0, height:2},
-        shadowOpacity:0.3,
-        shadowRadius:6,
-      },
-  
-      studentnametitle:{
-        textAlign: 'center',
-        color:'black',
-        fontSize:18
-      },
-  
-  // 録音機能
-      recordingbox:{
-        position: 'relative',
-        backgroundColor:'white',
-        height:100,
-        padding:2,
-        justifyContent:'center',
-        shadowColor:'black',
-        shadowOffset:{width:0, height:2},
-        shadowOpacity:0.3,
-        shadowRadius:6,
-  
-      },
-  
-      micophoneicon:{
-        textAlign: 'center',
-        color:'black',
-        fontSize:18
-      }
-  
-  });
-  
+//       notebox:{
+//       flexDirection: 'column',
+//        width:200,
+//        justifyContent: 'space-between',
+//        padding:1
+//       },
   
 
-  export default ModalExample;
+// // 生徒情報
+//       studentname:{
+//         position: 'relative',
+//         backgroundColor:'white',
+//         height:50,
+//         padding:2,
+//         justifyContent:'center',
+//         shadowColor:'black',
+//         shadowOffset:{width:0, height:2},
+//         shadowOpacity:0.3,
+//         shadowRadius:6,
+//       },
+  
+//       studentnametitle:{
+//         textAlign: 'center',
+//         color:'black',
+//         fontSize:18
+//       },
+  
+//   // 録音機能
+//       recordingbox:{
+//         position: 'relative',
+//         backgroundColor:'white',
+//         height:100,
+//         padding:2,
+//         justifyContent:'center',
+//         shadowColor:'black',
+//         shadowOffset:{width:0, height:2},
+//         shadowOpacity:0.3,
+//         shadowRadius:6,
+  
+//       },
+  
+//       micophoneicon:{
+//         textAlign: 'center',
+//         color:'black',
+//         fontSize:18
+//       }
+  
+//   });
+  
+  
+
+//   export default ModalExample;

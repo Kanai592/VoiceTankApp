@@ -35,23 +35,28 @@ firebase.initializeApp(firebaseConfig);
 
 
 const App = createStackNavigator({
- 
-    Login:{ screen: LoginScreen }, 
-    Signup:{ screen: SignupScreen },
-    Main:{ screen: Main},
-    Modal:{ screen: Modal},
 
+  Login:{ screen: LoginScreen },
+  Main:{ screen: Main},
+  Login:{ screen: LoginScreen },
+  Signup:{ screen: SignupScreen },
+     
    
    
+    Modal:{ screen: Modal,
+    navigationOptions: {
+      headerShown: true,
+    },
     
+    },
+
 },{
     defaultNavigationOptions:{ 
-    headerTitle:'Voice Tank',
+    // headerTitle:'Voice Tank',
     headerTintColor:'#888888',
     headerBackTitle: null,
-    
     headerStyle:{
-    backgroundColor:'#4BDAE0',
+    backgroundColor:'#77EEFF',
     },
   },
 } );

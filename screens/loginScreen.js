@@ -43,9 +43,6 @@ class LoginScreen extends React.Component {
     return(
 
         <View style={styles.container}> 
-           <Text style={styles.title}> 
-            Voice Tank ログイン
-           </Text>
         
 
            <TextInput style={styles.input} 
@@ -91,7 +88,7 @@ class LoginScreen extends React.Component {
             container:{
                 flex:1,
                 width:'100%',
-                backgroundColor:'#4BDAE0',
+                backgroundColor:'#77EEFF',
                 padding:30
 
             },

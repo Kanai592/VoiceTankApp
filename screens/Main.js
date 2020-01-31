@@ -2,9 +2,37 @@
 import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet, TouchableOpacity} from 'react-native';
 
+import axios from 'axios';
+
+const baseRequest = axios.create({
+  baseURL: 'https://us-central1-voice-tank-app.cloudfunctions.net/v1',
+  responseType: 'json',
+})
 
 class Main extends React.Component {
  
+  constructor(props) {
+    super(props);
+    this.state = {studentList: null};
+  }
+
+  componentWillMount() {
+    // api call(生徒一覧取得)
+    baseRequest
+      .get('/classes/1/students')
+      .then( res => {
+        console.log(res.data);
+        this.setState({ studentList: res.data});
+      })
+      .catch( error => {
+        console.log(error.response);
+      });
+  }
+
+  doNotWork() {
+    alert('まだ作ってません');
+  }
+
 
   render(){
   return(
@@ -12,22 +40,13 @@ class Main extends React.Component {
       <View style={styles.mainbox}>
  
  
-         <View style={styles.appbar}>
- 
-         <View><Text style={styles.appbartitle}>Let's start Evaluating</Text></View>
-         </View>
- <TouchableOpacity>
+    <TouchableOpacity>
    
- </TouchableOpacity>
+    </TouchableOpacity>
        <View style={styles.linkbuttons}>
-       
- 
- 
-               <View>
-     
-               <Button title="席替え" onPress={()=>{}}/>
-               
-               </View>
+        <View>
+          <Button title="席替え" onPress={this.doNotWork.bind(this)}/>
+        </View>
  
                <View>
                <Button title="補助簿" onPress={()=>{}}/>
@@ -43,37 +62,81 @@ class Main extends React.Component {
        
        
  
- 
        <View style={styles.seats}>
  
          
          <View style>
-             
- 
-             <TouchableOpacity style={styles. seat1box}
+            <TouchableOpacity style={styles. seat1box}
                                      activeOpacity={0.8} 
-                                     onPress={()=>{
-               this.props.navigation.navigate({routeName:'Modal'});
+                                     onPress={() => {
+                                       // TODO: Modal側にstateの中のStudentNumberをわたす
+                                      this.props.navigation
+                                        .navigate({routeName:'Modal'});
+                                      }}>
+              <View><Text style={styles.seat1}>seat1</Text></View>
+            </TouchableOpacity>
  
-               }}>
- 
-               <View><Text style={styles.seat1}>出席番号</Text></View>
- 
- 
-               </TouchableOpacity>
- 
-             <Button title="seat2" onPress={() =>{}}/>
- 
-             <Button title="seat3" onPress={()=>{}}/>
- 
-             <Button title="seat4" onPress={()=>{}}/>
- 
-             <Button title="seat5" onPress={()=>{}}/>
- 
-             <Button title="seat6" onPress={()=>{}}/>
- 
-             <Button title="seat7" onPress={()=>{}}/>
-             </View>
+            <TouchableOpacity style={styles. seat1box}
+                                     activeOpacity={0.8} 
+                                     onPress={() => {
+                                       // TODO: Modal側にstateの中のStudentNumberをわたす
+                                      this.props.navigation
+                                        .navigate({routeName:'Modal'});
+                                      }}>
+              <View><Text style={styles.seat1}>seat2</Text></View>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles. seat1box}
+                                     activeOpacity={0.8} 
+                                     onPress={() => {
+                                       // TODO: Modal側にstateの中のStudentNumberをわたす
+                                      this.props.navigation
+                                        .navigate({routeName:'Modal'});
+                                      }}>
+              <View><Text style={styles.seat1}>seat3</Text></View>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles. seat1box}
+                                     activeOpacity={0.8} 
+                                     onPress={() => {
+                                       // TODO: Modal側にstateの中のStudentNumberをわたす
+                                      this.props.navigation
+                                        .navigate({routeName:'Modal'});
+                                      }}>
+              <View><Text style={styles.seat1}>seat4</Text></View>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles. seat1box}
+                                     activeOpacity={0.8} 
+                                     onPress={() => {
+                                       // TODO: Modal側にstateの中のStudentNumberをわたす
+                                      this.props.navigation
+                                        .navigate({routeName:'Modal'});
+                                      }}>
+              <View><Text style={styles.seat1}>seat5</Text></View>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles. seat1box}
+                                     activeOpacity={0.8} 
+                                     onPress={() => {
+                                       // TODO: Modal側にstateの中のStudentNumberをわたす
+                                      this.props.navigation
+                                        .navigate({routeName:'Modal'});
+                                      }}>
+              <View><Text style={styles.seat1}>seat6</Text></View>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles. seat1box}
+                                     activeOpacity={0.8} 
+                                     onPress={() => {
+                                       // TODO: Modal側にstateの中のStudentNumberをわたす
+                                      this.props.navigation
+                                        .navigate({routeName:'Modal'});
+                                      }}>
+              <View><Text style={styles.seat1}>seat7</Text></View>
+            </TouchableOpacity>
+
+          </View>
  
              <View>
              <Button title="seat8" onPress={()=>{}}/>
@@ -171,10 +234,14 @@ class Main extends React.Component {
   
  
        </View>
+
+      
+       <View style={styles.appbar}>
  
+       <View><Text style={styles.appbartitle}>Front</Text></View>
        </View>
- 
-     
+
+       </View>
  
      );
    }
@@ -194,7 +261,7 @@ class Main extends React.Component {
 
             appbar:{ 
               position: 'relative',
-              backgroundColor:'#4BDAE0',
+              backgroundColor:'#DDDDDD',
               height:50,
               padding:2,
               justifyContent:'center',

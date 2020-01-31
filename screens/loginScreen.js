@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import firebase from 'firebase';
-import { View, Text, StyleSheet, Button, TextInput, } from 'react-native';
+import { View, Text, StyleSheet, Image, TextInput, } from 'react-native';
 import { TouchableOpacity, TouchableHighlight } from 'react-native-gesture-handler';
 
 
@@ -67,14 +67,40 @@ class LoginScreen extends React.Component {
             <TouchableOpacity style ={styles.button} 
                                 onPress={this.handleSubmit.bind(this)}> 
                 
-                <View><Text style={styles.buttontitle}>ログインする</Text></View>
+                <View><Text style={styles.buttontitle}>ログイン</Text></View>
+
+            </TouchableOpacity>
+
+
+            <TouchableOpacity style ={styles.signupbutton} 
+                                onPress={() => {
+                                   this.props.navigation
+                                     .navigate({routeName:'Signup'});
+                                   }}>
+                
+                <View><Text style={styles.buttontitle}>VoiceTankを始める（登録する）</Text></View>
 
             </TouchableOpacity>
             
+
+            <View style ={styles.image}>
+            <Image style={{ width: 310, height: 310 , opacity:0.7, }} 
+                   source={require('../assets/images/speaking.png')}
+
+                   />
+
           
+        
 
 
+
+
+
+            </View>
+           
         </View>
+
+        
     
 
             );
@@ -89,13 +115,16 @@ class LoginScreen extends React.Component {
                 flex:1,
                 width:'100%',
                 backgroundColor:'#77EEFF',
-                padding:30
+                padding:15
+                // justifyContent:'center',
 
             },
 
             input:{
                 backgroundColor:'#fff',
                 height:48,
+                width:290,
+                justifyContent:'center',
                 marginBottom:16,
                 borderColor:'#fff',
                 borderWidth:1,
@@ -112,19 +141,55 @@ class LoginScreen extends React.Component {
 
                 backgroundColor:'#fff',
                 height:48,
+                width:290,
+                justifyContent:'center',
+                marginBottom:16,
                 borderRadius:14,
                 justifyContent:'center',
-                alignItems:'center'
+                alignItems:'center',
+                padding:8,
 
             },
 
             buttontitle:{
                 color:'grey',
-                fontSize:20
+                fontSize:20,
+                padding:10,
             
 
 
-            }
+            },
+
+            signupbutton:{
+               
+                backgroundColor:'#DDDDDD',
+                height:48,
+                width:290,
+                justifyContent:'center',
+                borderRadius:14,
+                alignItems:'center',
+
+
+            },
+
+            buttontitle:{
+                color:'grey',
+                fontSize:20,
+                padding:10,
+                
+
+            },
+
+            image:{
+                flex:1,
+                bottom:225,
+                left:315,
+
+            },
+
+
+
+           
             
 
 

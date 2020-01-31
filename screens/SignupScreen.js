@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import firebase from 'firebase';
 
-import { View, Text, StyleSheet, Button, TextInput, } from 'react-native';
+import { View, Text, StyleSheet, Button, TextInput, Image } from 'react-native';
 import { TouchableOpacity, TouchableHighlight } from 'react-native-gesture-handler';
 
 import{ createStackNavigator} from 'react-navigation-stack';
@@ -39,9 +39,9 @@ class SignupScreen extends React.Component {
     return(
 
         <View style={styles.container}> 
-           <Text style={styles.title}> 
+           {/* <Text style={styles.title}> 
             メンバー登録画面
-           </Text>
+           </Text> */}
         
 
            <TextInput style={styles.input} 
@@ -68,6 +68,17 @@ class SignupScreen extends React.Component {
                 <View><Text style={styles.buttontitle}>送信する</Text></View>
 
             </TouchableOpacity>
+
+            <View style ={styles.image}>
+
+            <Image style={{ width: 350, height: 350 , opacity:0.7, }} 
+                   source={require('../assets/images/replying.png')}
+
+                   />
+
+
+            </View>
+                   
             
           
 
@@ -85,12 +96,14 @@ class SignupScreen extends React.Component {
                 flex:1,
                 width:'100%',
                 backgroundColor:'#77EEFF',
-                padding:30
+                padding:15,
+
             },
 
             input:{
                 backgroundColor:'#fff',
                 height:48,
+                width:290,
                 marginBottom:16,
                 borderColor:'#fff',
                 borderWidth:1,
@@ -107,6 +120,7 @@ class SignupScreen extends React.Component {
 
                 backgroundColor:'#fff',
                 height:48,
+                width:290,
                 borderRadius:14,
                 justifyContent:'center',
                 alignItems:'center'
@@ -117,6 +131,15 @@ class SignupScreen extends React.Component {
                 color:'grey',
                 fontSize:20
             
+
+
+            },
+
+            image:{
+                flex:1,
+                bottom:195,
+                left:300,
+                
 
 
             }

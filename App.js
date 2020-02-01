@@ -14,6 +14,7 @@ import Main from './screens/Main';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import Modal from './screens/Modal';
+import ClassScreen from'./screens/ClassScreen';
 
 import ENV from './env.json';
 
@@ -36,20 +37,17 @@ firebase.initializeApp(firebaseConfig);
 
 const App = createStackNavigator({
   
-  Login:{ screen: LoginScreen },
+
+
+  VoiceTank:{ screen: LoginScreen },
 
   Signup:{ screen: SignupScreen },
 
+
+  Main:{screen: Main},
   
+  ClassScreen:{ screen: ClassScreen },
   
-  
-  
-  Main:{ screen: Main},
-  
-  
-  
-     
-   
    
     Modal:{ screen: Modal,
     navigationOptions: {
@@ -64,7 +62,7 @@ const App = createStackNavigator({
     headerTintColor:'#888888',
     headerBackTitle: null,
     headerStyle:{
-    backgroundColor:'#77EEFF',
+    backgroundColor:'#4BDAE0',
     },
   },
 } );

@@ -12,8 +12,17 @@ const baseRequest = axios.create({
 
 class Modals extends React.Component {
   // TODO:　表示時にすでに登録された評価を取得して、画面の色を塗るなりする
+
+
+
+
+
   pointPress(pointText) {
     // TODO: A0012をMain.jsから受け取ったstudentNumberにする
+
+
+
+
     baseRequest
       .post('/classes/1/students/A0012', {point: pointText})
       .then( res => {
@@ -23,6 +32,8 @@ class Modals extends React.Component {
         console.log(error.response);
       });
   }
+
+  
 
   doNotWork() {
     alert('まだ作ってません');

@@ -95,7 +95,7 @@ class SignupScreen extends React.Component {
             container:{
                 flex:1,
                 width:'100%',
-                backgroundColor:'#77EEFF',
+                backgroundColor:'#4BDAE0',
                 padding:15,
 
             },

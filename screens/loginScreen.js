@@ -78,7 +78,7 @@ class LoginScreen extends React.Component {
                                      .navigate({routeName:'Signup'});
                                    }}>
                 
-                <View><Text style={styles.buttontitle}>VoiceTankを始める（登録する）</Text></View>
+                <View><Text style={styles.buttontitle}>今すぐ始める！（登録する）</Text></View>
 
             </TouchableOpacity>
             
@@ -114,7 +114,7 @@ class LoginScreen extends React.Component {
             container:{
                 flex:1,
                 width:'100%',
-                backgroundColor:'#77EEFF',
+                backgroundColor:'#4BDAE0',
                 padding:15
                 // justifyContent:'center',
 

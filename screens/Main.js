@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet, TouchableOpacity,} from 'react-native';
 
 import axios from 'axios';
+import { useCardAnimation } from 'react-navigation-stack';
 
 const baseRequest = axios.create({
   baseURL: 'https://us-central1-voice-tank-app.cloudfunctions.net/v1',
@@ -13,7 +14,13 @@ class Main extends React.Component {
  
   constructor(props) {
     super(props);
-    this.state = {studentList: null};
+    this.state = {studentList: [],
+
+    // 追加項目
+    rec:[], //空の配列で初期化
+    coords: null
+ 
+  };
   }
 
   componentWillMount() {
@@ -23,11 +30,36 @@ class Main extends React.Component {
       .then( res => {
         console.log(res.data);
         this.setState({ studentList: res.data});
+     
+
+      })
+      .catch( error => {
+        console.log(error.response);
+      });
+  
+  }
+
+
+  // 実験
+  pointPress(StudentNumber) {
+   
+
+    baseRequest
+    .post('/classes/1/students/student_number', {student_number: StudentNumber})
+    
+      .then( res => {
+        console.log(res.data);
       })
       .catch( error => {
         console.log(error.response);
       });
   }
+
+
+// 実験ここまで
+
+
+
 
   doNotWork() {
     alert('まだ作ってません');
@@ -35,6 +67,25 @@ class Main extends React.Component {
 
 
   render(){
+
+    const SeatList = [];
+    var studentList = this.state.studentList;
+
+    for (let i = 0; i < studentList.length; i++) {
+      SeatList.push(
+        <TouchableOpacity style={styles. seat1box}
+                                  activeOpacity={0.2} 
+                                  onPress={() => {
+                                    this.props.navigation
+                                      .navigate('Modal',
+                                        { studentNumber: studentList[i].data.student_number }
+                                      );
+                                    }}>
+          <View><Text style={styles.seat1}>seat{i + 1}</Text></View>
+        </TouchableOpacity>
+      );
+    }
+
   return(
 
       <View style={styles.mainbox}>
@@ -65,76 +116,7 @@ class Main extends React.Component {
  
          
          <View style>
-            <TouchableOpacity style={styles. seat1box}
-                                     activeOpacity={0.2} 
-                                     onPress={() => {
-                                       // TODO: Modal側にstateの中のStudentNumberをわたす
-                                      this.props.navigation
-                                        .navigate({routeName:'Modal'});
-                                      }}>
-              <View><Text style={styles.seat1}>seat1</Text></View>
-            </TouchableOpacity>
- 
-            <TouchableOpacity style={styles. seat1box}
-                                     activeOpacity={0.2} 
-                                     onPress={() => {
-                                       
-                                      this.props.navigation
-                                        .navigate({routeName:'Modal'});
-                                      }}>
-              <View><Text style={styles.seat1}>seat2</Text></View>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles. seat1box}
-                                     activeOpacity={0.2} 
-                                     onPress={() => {
-                                      
-                                      this.props.navigation
-                                        .navigate({routeName:'Modal'});
-                                      }}>
-              <View><Text style={styles.seat1}>seat3</Text></View>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles. seat1box}
-                                     activeOpacity={0.2} 
-                                     onPress={() => {
-                                       
-                                      this.props.navigation
-                                        .navigate({routeName:'Modal'});
-                                      }}>
-              <View><Text style={styles.seat1}>seat4</Text></View>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles. seat1box}
-                                     activeOpacity={0.2} 
-                                     onPress={() => {
-                                      
-                                      this.props.navigation
-                                        .navigate({routeName:'Modal'});
-                                      }}>
-              <View><Text style={styles.seat1}>seat5</Text></View>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles. seat1box}
-                                     activeOpacity={0.2} 
-                                     onPress={() => {
-                                      
-                                      this.props.navigation
-                                        .navigate({routeName:'Modal'});
-                                      }}>
-              <View><Text style={styles.seat1}>seat6</Text></View>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles. seat1box}
-                                     activeOpacity={0.2} 
-                                     onPress={() => {
-                                       
-                                      this.props.navigation
-                                        .navigate({routeName:'Modal'});
-                                      }}>
-              <View><Text style={styles.seat1}>seat7</Text></View>
-            </TouchableOpacity>
-
+            {SeatList}
           </View>
  
           <View style>
@@ -510,7 +492,7 @@ class Main extends React.Component {
       
        <View style={styles.appbar}>
  
-       <View><Text style={styles.appbartitle}>Front</Text></View>
+       <View><Text style={styles.appbartitle}>黒板</Text></View>
        </View>
 
        </View>
@@ -546,7 +528,9 @@ class Main extends React.Component {
             appbartitle:{
               textAlign: 'center',
               color:'black',
-              fontSize:18
+              fontSize:18,
+              marginBottom:15,
+              
             },
 
             seats:  {

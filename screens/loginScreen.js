@@ -74,9 +74,9 @@ class LoginScreen extends React.Component {
 
             <TouchableOpacity style ={styles.signupbutton} 
                                 onPress={() => {
-                                   this.props.navigation
-                                     .navigate({routeName:'Signup'});
-                                   }}>
+                                this.props.navigation
+                                .navigate({routeName:'Signup'});
+                                 }}>
                 
                 <View><Text style={styles.buttontitle}>今すぐ始める！（登録する）</Text></View>
 

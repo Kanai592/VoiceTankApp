@@ -53,10 +53,10 @@ class ClassScreen extends React.Component {
                 <View style ={styles.image}
                               activeOpacity={0.2} 
                               onPress={() => {
-                                this.props.navigation
-                                  .navigate({routeName:'Main'});
-                                }}>
-                                  
+                              this.props.navigation
+                              .navigate({routeName:'Main'});
+                              }}>
+
                  <Image style={{ width: 100, height: 100 }} 
                         source={require('../assets/images/folder.jpg')}
                   />

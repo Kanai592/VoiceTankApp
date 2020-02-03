@@ -12,19 +12,40 @@ const baseRequest = axios.create({
 
 class Modals extends React.Component {
   // TODO:　表示時にすでに登録された評価を取得して、画面の色を塗るなりする
+  constructor(props) {
+    super(props);
+    const { studentNumber } = props.navigation.state.params
+    this.state = {
+      studentName: "",
+      studentNumber: studentNumber
+    };
+  }
+
+  componentWillMount() {
+    // api call(生徒取得)
+    baseRequest
+      .get('/classes/1/students/' + this.state.studentNumber)
+      .then( res => {
+        this.setState({ studentName: res.data[0].data.name});
+      })
+      .catch( error => {
+        console.log(error.response);
+      });
+  
+  }
 
 
 
 
 
   pointPress(pointText) {
-    // TODO: A0012をMain.jsから受け取ったstudentNumberにする
+    const class_id = "1";
+    const student_number = this.state.studentNumber;
 
-
-
+    var url = "/classes/" + class_id + "/students/" + student_number;
 
     baseRequest
-      .post('/classes/1/students/A0012', {point: pointText})
+    .post(url, {point: pointText})
       .then( res => {
         console.log(res.data);
       })
@@ -93,10 +114,10 @@ class Modals extends React.Component {
             </View>
 
             <View style={styles.notebox}>
-              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>最高</Text>
-              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>まぁまぁ</Text>
-              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>ぼちぼち</Text>
-              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>だめ</Text>
+              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Excellent!</Text>
+              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Great!</Text>
+              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Good!</Text>
+              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Need more effort.</Text>
               
               <TouchableOpacity style={styles.buttonabsent}
                                 activeOpacity={0.2} 
@@ -108,7 +129,7 @@ class Modals extends React.Component {
 
           {/* ここから生徒情報 */}
           <View style={styles.studentname}>
-            <View><Text style={styles.studentnametitle}>#07   叶　隆之介</Text></View>
+  <View><Text style={styles.studentnametitle}>#{this.state.studentNumber}   {this.state.studentName}</Text></View>
           </View>
 
           <View style={styles.recordingbox}>

@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 
-import { View, Text, StyleSheet, Button, TextInput, Modal } from 'react-native';
+import { View, Text, StyleSheet, Button, TextInput, Modal, Image } from 'react-native';
 import { TouchableOpacity, TouchableHighlight } from 'react-native-gesture-handler';
 // import firebase from 'firebase'
 import axios from 'axios';
+
+
+
 
 const baseRequest = axios.create({
   baseURL: 'https://us-central1-voice-tank-app.cloudfunctions.net/v1',
@@ -60,6 +63,10 @@ class Modals extends React.Component {
     alert('まだ作ってません');
   }
 
+
+
+
+
   render() {
   return(
       < Modal 
@@ -114,10 +121,10 @@ class Modals extends React.Component {
             </View>
 
             <View style={styles.notebox}>
-              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Excellent!</Text>
-              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Great!</Text>
-              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Good!</Text>
-              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Need more effort.</Text>
+              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Excellent! &nbsp;&nbsp;~ができる</Text>
+              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Great! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ができる</Text>
+              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Good! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ができる</Text>
+              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>努力が必要</Text>
               
               <TouchableOpacity style={styles.buttonabsent}
                                 activeOpacity={0.2} 
@@ -133,9 +140,14 @@ class Modals extends React.Component {
           </View>
 
           <View style={styles.recordingbox}>
+            <View style={styles.microphone}> 
             <View>
-              <Button title="🎤" onPress={this.doNotWork.bind(this)}/>
+               <Image style={{ width: 80, height: 78, }} 
+                   source={require('../assets/images/microphone.png')}
+                  />
+              {/* <Button title="🎤" onPress={this.doNotWork.bind(this)}/> */}
               <Text style={styles.micophoneicon}>Tap to Record</Text>
+              </View>
             </View>
           </View>
         </View> 
@@ -351,7 +363,13 @@ const styles = StyleSheet.create({
                 color:'black',
                 fontSize:15,
             
-    }
+             },
+               micophone:{
+               position: 'relative',
+               justifyContent: 'center',
+               color:'black',
+               fontSize:15,
+  }
 
 });
 

@@ -10,6 +10,7 @@ import{ StyleSheet, View} from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
+
 import Main from './screens/Main';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
@@ -17,6 +18,7 @@ import Modal from './screens/Modal';
 import ClassScreen from'./screens/ClassScreen';
 
 import ENV from './env.json';
+
 
 
 
@@ -36,7 +38,6 @@ firebase.initializeApp(firebaseConfig);
 
 
 const App = createStackNavigator({
-  
 
 
   VoiceTank:{ screen: LoginScreen },

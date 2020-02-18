@@ -36,6 +36,8 @@ target 'VoiceTankApp' do
 
   pod 'RNAudio', :path => '../node_modules/react-native-audio'
 
+  pod 'RNSound', :path => '../node_modules/react-native-sound'
+
   target 'VoiceTankAppTests' do
     inherit! :search_paths
     # Pods for testing

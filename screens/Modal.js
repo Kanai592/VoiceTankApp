@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 
-import { View, Text, StyleSheet, Button, TextInput, Modal, Image } from 'react-native';
+import { View, Text, StyleSheet, Button, TextInput, Image, Modal } from 'react-native';
 import { TouchableOpacity, TouchableHighlight } from 'react-native-gesture-handler';
 // import firebase from 'firebase'
 import axios from 'axios';
-
 
 
 
@@ -67,8 +66,15 @@ class Modals extends React.Component {
 
 
 
+
+
+
   render() {
   return(
+
+
+
+
       < Modal 
         animationType="slide"
         transparent={false}

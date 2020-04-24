@@ -109,7 +109,7 @@ class Main extends React.Component {
                                      onPress={() => {
                                        // TODO: Modal側にstateの中のStudentNumberをわたす
                                       this.props.navigation
-                                        .navigate({routeName:'Modal'});
+                                        .navigate({routeName:'ModalScreen'});
                                       }}>
               <View><Text style={styles.seat1}>seat8</Text></View>
             </TouchableOpacity>

@@ -40,12 +40,14 @@ firebase.initializeApp(firebaseConfig);
 const App = createStackNavigator({
 
 
+  
+  Main:{screen: Main},
+  
   VoiceTank:{ screen: LoginScreen },
 
   Signup:{ screen: SignupScreen },
 
 
-  Main:{screen: Main},
   
   ClassScreen:{ screen: ClassScreen },
   

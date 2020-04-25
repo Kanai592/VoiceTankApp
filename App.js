@@ -19,7 +19,7 @@ import ClassScreen from'./screens/ClassScreen';
 
 import ENV from './env.json';
 
-
+import RecordingScreen from'./screens/RecordingScreen';
 
 
 const firebaseConfig = {
@@ -39,7 +39,7 @@ firebase.initializeApp(firebaseConfig);
 
 const App = createStackNavigator({
 
-
+  RecordingScreen:{screen: RecordingScreen},
   
   Main:{screen: Main},
   

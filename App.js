@@ -19,7 +19,11 @@ import ClassScreen from'./screens/ClassScreen';
 
 import ENV from './env.json';
 
+// 追加しVoiceTankで動くか検証
 import RecordingScreen from'./screens/RecordingScreen';
+// stepbystepでもう一度バラして要素を入れる
+import stepbystep from'./screens/stepbystep';
+
 
 
 const firebaseConfig = {
@@ -39,9 +43,14 @@ firebase.initializeApp(firebaseConfig);
 
 const App = createStackNavigator({
 
-  RecordingScreen:{screen: RecordingScreen},
   
   Main:{screen: Main},
+  
+  // 評価と録音:{screen: RecordingScreen},
+
+  // stepbystep:{screen: stepbystep},
+
+  
   
   VoiceTank:{ screen: LoginScreen },
 

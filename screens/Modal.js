@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import { View, Text, StyleSheet, Button, TextInput, Image, Modal, PermissionsAndroid, Platform, SafeAreaView,TouchableOpacity } from 'react-native';
-import {  TouchableHighlight } from 'react-native-gesture-handler';
+
 // import firebase from 'firebase'
 import axios from 'axios';
 
@@ -41,6 +41,7 @@ class Modals extends React.Component<Props, State> {
   recorder: Recorder | null;
   lastSeek: number;
   _progressInterval: IntervalID;
+  _recordTimerInterval: IntervalID;
 
   // TODO:　表示時にすでに登録された評価を取得して、画面の色を塗るなりする
   constructor(props) {
@@ -56,6 +57,10 @@ class Modals extends React.Component<Props, State> {
 
       //loopButtonStatus: false,
       progress: 0,
+
+      recordStartTime: null,
+
+      recordDurationTime: null,    //経過時間
 
       error: null,
 
@@ -94,6 +99,8 @@ class Modals extends React.Component<Props, State> {
           currentProgress = 0;
         }
         this.setState({ progress: currentProgress }); // 進捗barを更新
+
+        this.setState({ counttimer: this.state.counttimer+1}); //１秒ごとにカウントされる
       }
     }, 100);
   
@@ -101,6 +108,7 @@ class Modals extends React.Component<Props, State> {
 
   componentWillUnmount() {
     clearInterval(this._progressInterval);
+    clearInterval(this._recordTimerInterval);
   }
 
   pointPress(pointText) {
@@ -149,6 +157,8 @@ class Modals extends React.Component<Props, State> {
         });
       }
       this._updateState();
+
+      this.setState({ recordDurationTime: null})
     });
   }
 
@@ -246,11 +256,39 @@ class Modals extends React.Component<Props, State> {
         if (stopped) {
           this._reloadPlayer();
           this._reloadRecorder();
+
+          clearInterval(this._recordTimerInterval);
+
+        } else {
+          this.setState({ recordStartTime: new Date()})  //レコード開始時間を取得
+
+          this._recordTimerInterval = setInterval(() => {
+            var stopTime = new Date(); // 経過時間を退避
+
+            var elapsed = stopTime.getTime() - this.state.recordStartTime.getTime(); // 経過時間の差分を取得
+            var H = Math.floor(elapsed / (60 * 60 * 1000)); // 時間取得
+            elapsed = elapsed - (H * 60 * 60 * 1000);
+            var M = Math.floor(elapsed / (60 * 1000)); // 分取得
+            elapsed = elapsed - (M * 60 * 1000);
+            var S = Math.floor(elapsed / 1000); // 秒取得
+            var MS = elapsed % 100; // ミリ秒取得
+
+            this.setState({ recordDurationTime: this._organizeTime(M,S,MS)})
+          }, 100);
         }
+
+        
 
         this._updateState();
       });
     });
+  }
+
+  _organizeTime(minutes, second, milisecond) {
+    return this._alignTime(minutes) + ":" + this._alignTime(second) + "." + this._alignTime(milisecond)
+  }
+  _alignTime(time) {
+    return ("0"+time).slice(-2)
   }
 
   async _requestRecordAudioPermission() {
@@ -286,48 +324,23 @@ class Modals extends React.Component<Props, State> {
 
 
 
-      < Modal 
+ < Modal 
         animationType="slide"
         transparent={false}
-        presentationStyle="pageSheet"
+        presentationStyle="formSheet"
       >
-        <View style={styles.container}>
-          <View style={styles.appbar}>
-            <View>
-              <Text style={styles.appbartitle}> 評価</Text>
-            </View>  
-          </View>
-          <SafeAreaView> 
-            <View>
-              <Text style={styles.title}>
-                30.06s
-              </Text>
-            </View>
 
-            <TouchableOpacity style={styles.buttonRecord}
-                                    activeOpacity={0.2} >
-              <Image style={{ resizeMode: "contain", width: 110, height: 100, }} 
-                        source={require('../assets/images/microphone.png')}
-                        />
-              <View>
-                <Button title={this.state.recordButton} disabled={this.state.recordButtonDisabled} onPress={() => this._toggleRecord()} />
-              </View>
-            </TouchableOpacity>
+<View style= {styles.outercontainer}> 
+   
 
-            <View>
-              <Text style={styles.errorMessage}>{this.state.error}</Text>
-            </View>
-            <View style={styles.slider}>
-              <Slider step={0.0001} disabled={this.state.playButtonDisabled} onValueChange={(percentage) => this._seek(percentage)} value={this.state.progress} />
-            </View>
-            <View >
-              <Button title={this.state.playPauseButton} disabled={this.state.playButtonDisabled} onPress={() => this._playPause()} />
-              <Button title={'Stop'} disabled={this.state.stopButtonDisabled} onPress={() => this._stop()} />
-            </View>
-          </SafeAreaView>
-          <View style={styles.evaluationboxheader}>
-            <View><Text style={styles.evaluationboxtitle}>評価基準メモ</Text></View>
-          </View>
+
+
+      <View style={styles.container1}>
+
+
+
+
+
 
           <View style={styles.evaluationbox}>
             <View style={styles.evaluations}>
@@ -378,99 +391,169 @@ class Modals extends React.Component<Props, State> {
             </View>
           </View>
 
+          <View style={styles.imageperson}>
+                  <Image style={{   width: 80, height: 80, }} 
+                        source={require('../assets/images/person-icon.jpg')}
+                    />
+            </View>
+
           {/* ここから生徒情報 */}
           <View style={styles.studentname}>
-  <View><Text style={styles.studentnametitle}>#{this.state.studentNumber}   {this.state.studentName}</Text></View>
+          <View><Text style={styles.studentnametitle}>#{this.state.studentNumber}   {this.state.studentName}</Text></View>
           </View>
 
-     
 
         </View> 
+
+
+            <View style= {styles.container2}> 
+
+
+            <View>
+              <Text style={styles.errorMessage}>{this.state.error}</Text>
+            </View>
+            <View style={styles.slider}>
+              <Slider step={0.0001} disabled={this.state.playButtonDisabled} onValueChange={(percentage) => this._seek(percentage)} value={this.state.progress} />
+            </View>
+            <View style={styles.playpause}>
+              <Button title={this.state.playPauseButton} disabled={this.state.playButtonDisabled} onPress={() => this._playPause()} />
+              <Button title={'Stop'} disabled={this.state.stopButtonDisabled} onPress={() => this._stop()} />
+              <Text style={styles.errorMessage}>{this.state.recordDurationTime}</Text>
+            </View>     
+
+            <View style={styles.recordingbox}>
+              <TouchableOpacity style={styles.buttonRecord}
+                                    activeOpacity={0.4} >
+
+                                      <View style={styles.image}>
+                                      <Image style={{   width: 60, height: 60, }} 
+                                        source={require('../assets/images/whitemicrophone.png')}
+                                        />
+
+                                      </View>
+
+
+               <View>
+                <Button title={this.state.recordButton} disabled={this.state.recordButtonDisabled} onPress={() => this._toggleRecord()} />
+               </View>
+            </TouchableOpacity>
+              
+              </View>   
+
+         
+
+
+
+
+          </View>
+
+
+
+
+
+
+  </View> 
+
     </Modal>
   );
   }
 }
 
 const styles = StyleSheet.create({
+
+
+  // 録音部分
+
+  imageperson:{
+    // backgroundColor:"black",
+    alignItems:"center"
+
+
+  },
+
   slider: {
-    height: 10,
-    margin: 10,
-    marginBottom: 50,
+    height: 5,
+    margin: 3,
+    marginBottom: 20,
   },
-  settingsContainer: {
-    alignItems: 'center',
+
+  playpause:{
+    marginTop:20,
+    marginBottom:20,
+
   },
-  container: {
-    borderRadius: 4,
-    borderWidth: 0.5,
-    borderColor: '#d6d7da',
-  },
-  title: {
-    fontSize: 19,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    padding: 20,
-  },
+
+
   errorMessage: {
     fontSize: 15,
     textAlign: 'center',
-    padding: 10,
+    padding: 20,
     color: 'red'
   },
 
-  buttonRecord: {
+  recordingbox:{
    
-    padding: 10,
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: "lightblue",
-    overflow: "hidden"
-},
+    alignItems:"center"
 
-    container:{
-               justifyContent:'center',
+  },
+
+  buttonRecord: {
+   backgroundColor:"#4BDAE0",
+   
+   width:220,
+    padding: 5,
+    borderRadius: 180,
+    borderWidth: 5,
+    borderColor: "#4BDAE0",
+    // overflow: "hidden"
+    
+    shadowColor:'black',
+    shadowOffset:{width:2, height:2},
+    shadowOpacity:0.1,
+    shadowRadius:6,
+},
+   image: {
+    alignItems: 'center',
+
+   },
+
+
+
+// ここから評価部分
+
+
+    outercontainer:{
+      flexDirection: 'row',
+      marginRight:20,
+      marginLeft:20,
+      marginTop:10,
+      marginBottom:10,
+
+            
+           
+  
+           },
+    container１:{
+               flex:1,
+              //  justifyContent:'center',
                padding:8
              },
+
+            
+
+            container2:{
+               flex:1,
+               justifyContent:'center',
+
+            },
           
-    appbar:{ 
-    alignItems: 'center',
-    justifyContent:'center',
-    backgroundColor:'white',
-    height:50,
-    padding:2,
-    justifyContent:'center',
-    shadowColor:'black',
-    shadowOffset:{width:0, height:2},
-    shadowOpacity:0.3,
-    shadowRadius:6,
-
-    },
-
-
-    appbartitle:{
-    
-      color:'black',
-      fontSize:18
-    },
-  
-    evaluationboxheader:{
-      // position:'',
-      padding:20,
-      marginBottom:10
-
-    },
-
-    evaluationboxtitle:{
-      position:'absolute',
-      fontSize:15
-    },
-
+ 
      evaluationbox:  {
       
        flexDirection: 'row',
        maxWidth:'100%',
        justifyContent: 'space-around',
-       padding:20,
+       padding:15,
        
       
       },
@@ -578,7 +661,7 @@ const styles = StyleSheet.create({
            absent:{
 
             fontSize:18,
-            color:'blue',
+            color:'black',
             margin:2    
               
             },
@@ -602,10 +685,10 @@ const styles = StyleSheet.create({
                 height:50,
                 padding:2,
                 justifyContent:'center',
-                shadowColor:'black',
-                shadowOffset:{width:0, height:2},
-                shadowOpacity:0.3,
-                shadowRadius:6,
+                // shadowColor:'black',
+                // shadowOffset:{width:0, height:2},
+                // shadowOpacity:0.3,
+                // shadowRadius:6,
             },
   
             studentnametitle:{
@@ -614,31 +697,19 @@ const styles = StyleSheet.create({
                 fontSize:18
             },
   
-        // 録音機能
-            recordingbox:{
-                position: 'relative',
-                backgroundColor:'white',
-                height:120,
-                padding:2,
-                justifyContent:'center',
-                shadowColor:'black',
-                shadowOffset:{width:0, height:2},
-                shadowOpacity:0.3,
-                shadowRadius:6,
-        
-            },
-        
-            micophoneicon:{
-                textAlign: 'center',
-                color:'black',
-                fontSize:15,
+    
+
+              evaluationcontainer:{
+                
+                flexDirection: 'column',
+
             
-             },
-               micophone:{
-               position: 'relative',
-               justifyContent: 'center',
-               color:'black',
-               fontSize:15,
+              
+    
+
+              
+                
+
   }
 
 });

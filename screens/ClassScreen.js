@@ -5,6 +5,9 @@ import { Container, Header, Item, Input, Icon, Button, Text, } from 'native-base
 
 class ClassScreen extends React.Component {
 
+
+  
+
   render() {
     return (
 
@@ -49,13 +52,19 @@ class ClassScreen extends React.Component {
            <View style ={styles.imagebox}>
 
              
-          <TouchableOpacity>
-                <View style ={styles.image}
-                              activeOpacity={0.2} 
-                              onPress={() => {
-                              this.props.navigation
-                              .navigate({routeName:'Main'});
-                              }}>
+
+      
+
+
+
+
+          <TouchableOpacity style ={styles.filebutton} 
+                                onPress={() => {
+                                this.props.navigation
+                                .navigate({routeName:'Main'});
+                                 }}>
+
+                <View>
 
                  <Image style={{ width: 100, height: 100 }} 
                         source={require('../assets/images/folder.jpg')}

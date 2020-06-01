@@ -18,27 +18,19 @@ class ClassScreen extends React.Component {
           
 
 
-      <Container style = {styles.container}>
-
-
-
-        <Header searchBar rounded>
-  
-
-          <Item>
-            {/* <Icon name="ios-search" /> */}
-            <Input placeholder="Search" />
-            
-           </Item>
-           <Button transparent>
-             <Text>Search</Text>
-             </Button>
-            </Header>
-          </Container>
         
         <View>
 
-
+        <Container style = {styles.searchbarcontainer}>
+        <Header searchBar rounded>
+          <Item>
+            <Icon name="ios-search" />
+            <Input placeholder="Search" />
+            
+          </Item>
+         
+        </Header>
+      </Container>
           
         </View>
 
@@ -52,11 +44,6 @@ class ClassScreen extends React.Component {
            <View style ={styles.imagebox}>
 
              
-
-      
-
-
-
 
           <TouchableOpacity style ={styles.filebutton} 
                                 onPress={() => {
@@ -108,6 +95,11 @@ class ClassScreen extends React.Component {
 
   const styles = StyleSheet.create({
 
+    searchbarcontainer:{
+        marginBottom:50,
+
+    },
+
     mainbox:{
         flex:1,
         flexDirection: 'column',
@@ -115,10 +107,6 @@ class ClassScreen extends React.Component {
 
     },
 
-    searchbartitle:{
-       flex:1
-
-    },
 
     imagebox:{
       flex:4,

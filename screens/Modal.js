@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 import { View, Text, StyleSheet, Button, TextInput, Image, Modal, PermissionsAndroid, Platform, SafeAreaView,TouchableOpacity } from 'react-native';
 
+import { Form, Header } from "native-base";
+
 // import firebase from 'firebase'
 import axios from 'axios';
 
@@ -324,11 +326,12 @@ class Modals extends React.Component<Props, State> {
 
 
 
- < Modal 
-        animationType="slide"
-        transparent={false}
-        presentationStyle="formSheet"
-      >
+//  < Modal 
+//         animationType="slide"
+//         transparent={false}
+//         presentationStyle="formSheet"
+//       >
+<Form>
 
 <View style= {styles.outercontainer}> 
    
@@ -454,7 +457,12 @@ class Modals extends React.Component<Props, State> {
 
   </View> 
 
-    </Modal>
+
+
+</Form>
+
+// 
+    // </Modal>
   );
   }
 }

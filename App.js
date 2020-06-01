@@ -43,37 +43,33 @@ firebase.initializeApp(firebaseConfig);
 
 const App = createStackNavigator({
 
+
+   
   Classroom:{screen: Main},
 
   ClassScreen:{ screen: ClassScreen },
 
+
+
   VoiceTank:{ screen: LoginScreen },
   
   VoiceTank:{ screen: LoginScreen },
-
-  
-
-
-  // 評価と録音:{screen: RecordingScreen},
-
-  // stepbystep:{screen: stepbystep},
-
-  
 
 
   Signup:{ screen: SignupScreen },
 
+  Modal:{ screen: Modal,
+    navigationOptions: {
+      headerShown: true,
+    },
+  },
 
   
  
   
-   
-    Modal:{ screen: Modal,
-    navigationOptions: {
-      headerShown: true,
-    },
+
     
-    },
+    
 
 },{
     defaultNavigationOptions:{ 

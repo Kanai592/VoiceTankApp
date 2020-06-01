@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet, TouchableOpacity,} from 'react-native';
 
 import axios from 'axios';
-import { useCardAnimation } from 'react-navigation-stack';
+
 
 const baseRequest = axios.create({
   baseURL: 'https://us-central1-voice-tank-app.cloudfunctions.net/v1',
@@ -65,7 +65,7 @@ class Main extends React.Component {
                                         { studentNumber: studentList[i].data.student_number }
                                       );
                                     }}>
-          <View><Text style={styles.seat1}>seat{i + 1}</Text></View>
+          <View><Text style={styles.seat1}>{studentList[i].data.name}</Text></View>
         </TouchableOpacity>
       );
     }

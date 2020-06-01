@@ -15,7 +15,7 @@
     "@react-native-community/slider": "^2.0.9",
     "axios": "^0.19.2",
     "firebase": "^7.14.1",
-    "native-base": "^2.13.8",
+    "native-base": "^2.13.12",
     "react": "16.9.0",
     "react-native": "^0.62.2",
     "react-native-audio": "^4.3.0",

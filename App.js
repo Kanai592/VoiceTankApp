@@ -60,7 +60,7 @@ const App = createStackNavigator({
 
   Modal:{ screen: Modal,
     navigationOptions: {
-      headerShown: true,
+      headerShown: false,
     },
   },
 

@@ -111,7 +111,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'ModalScreen'});
                                       }}>
-              <View><Text style={styles.seat1}>seat8</Text></View>
+              <View><Text style={styles.seat1}>清水</Text></View>
             </TouchableOpacity>
  
             <TouchableOpacity style={styles. seat1box}
@@ -121,7 +121,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat9</Text></View>
+              <View><Text style={styles.seat1}>山川</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -131,7 +131,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat10</Text></View>
+              <View><Text style={styles.seat1}>大石</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -141,7 +141,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat11</Text></View>
+              <View><Text style={styles.seat1}>谷川</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -151,7 +151,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat12</Text></View>
+              <View><Text style={styles.seat1}>長谷川</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -161,7 +161,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat13</Text></View>
+              <View><Text style={styles.seat1}>井上</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -171,7 +171,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat14</Text></View>
+              <View><Text style={styles.seat1}>松本</Text></View>
             </TouchableOpacity>
 
           </View>
@@ -185,7 +185,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat15</Text></View>
+              <View><Text style={styles.seat1}>西村</Text></View>
             </TouchableOpacity>
  
             <TouchableOpacity style={styles. seat1box}
@@ -195,7 +195,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat16</Text></View>
+              <View><Text style={styles.seat1}>林</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -205,7 +205,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat17</Text></View>
+              <View><Text style={styles.seat1}>橋下</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -215,7 +215,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat18</Text></View>
+              <View><Text style={styles.seat1}>佐々木</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -225,7 +225,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat19</Text></View>
+              <View><Text style={styles.seat1}>山口</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -235,7 +235,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat20</Text></View>
+              <View><Text style={styles.seat1}>金子</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -245,7 +245,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat21</Text></View>
+              <View><Text style={styles.seat1}>阿部</Text></View>
             </TouchableOpacity>
 
           </View>
@@ -259,7 +259,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat22</Text></View>
+              <View><Text style={styles.seat1}>前田</Text></View>
             </TouchableOpacity>
  
             <TouchableOpacity style={styles. seat1box}
@@ -279,7 +279,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat24</Text></View>
+              <View><Text style={styles.seat1}>山崎</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -289,7 +289,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat25</Text></View>
+              <View><Text style={styles.seat1}>田村</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -299,7 +299,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat26</Text></View>
+              <View><Text style={styles.seat1}>原</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -309,7 +309,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat27</Text></View>
+              <View><Text style={styles.seat1}>小川</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -319,7 +319,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat28</Text></View>
+              <View><Text style={styles.seat1}>岡本</Text></View>
             </TouchableOpacity>
 
           </View>
@@ -332,7 +332,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat29</Text></View>
+              <View><Text style={styles.seat1}>酒井</Text></View>
             </TouchableOpacity>
  
             <TouchableOpacity style={styles. seat1box}
@@ -342,7 +342,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat30</Text></View>
+              <View><Text style={styles.seat1}>木下</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -352,7 +352,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat31</Text></View>
+              <View><Text style={styles.seat1}>安藤</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -362,7 +362,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat32</Text></View>
+              <View><Text style={styles.seat1}>坂井</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -372,7 +372,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat33</Text></View>
+              <View><Text style={styles.seat1}>石田</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -382,7 +382,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat34</Text></View>
+              <View><Text style={styles.seat1}>上野</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -392,7 +392,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat35</Text></View>
+              <View><Text style={styles.seat1}>上田</Text></View>
             </TouchableOpacity>
 
           </View>
@@ -405,7 +405,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat36</Text></View>
+              <View><Text style={styles.seat1}>坂本</Text></View>
             </TouchableOpacity>
  
             <TouchableOpacity style={styles. seat1box}
@@ -415,7 +415,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat37</Text></View>
+              <View><Text style={styles.seat1}>小川</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -425,7 +425,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat38</Text></View>
+              <View><Text style={styles.seat1}>松田</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -435,7 +435,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat39</Text></View>
+              <View><Text style={styles.seat1}>後藤</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -445,7 +445,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat40</Text></View>
+              <View><Text style={styles.seat1}>遠藤</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -455,7 +455,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat41</Text></View>
+              <View><Text style={styles.seat1}>渡辺</Text></View>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles. seat1box}
@@ -465,7 +465,7 @@ class Main extends React.Component {
                                       this.props.navigation
                                         .navigate({routeName:'Modal'});
                                       }}>
-              <View><Text style={styles.seat1}>seat42</Text></View>
+              <View><Text style={styles.seat1}>中村</Text></View>
             </TouchableOpacity>
 
           </View>

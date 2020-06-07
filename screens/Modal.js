@@ -381,10 +381,11 @@ class Modals extends React.Component<Props, State> {
             </View>
 
             <View style={styles.notebox}>
-              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Excellent! &nbsp;&nbsp;~ができる</Text>
-              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Great! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ができる</Text>
-              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>Good! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ができる</Text>
-              <Text style={{ height: 35, fontSize:18, marginTop:5 }}>努力が必要</Text>
+              <Text style={{ height: 35, fontSize:12, marginTop:5 }}>Aに加えて、英語らしい発音・つなぎ言葉を意識し、会話を広げている。</Text>
+              <Text style={{ height: 35, fontSize:12, marginTop:5 }}>Canを用いて質問し、さらに質問などで会話を広げている。</Text>
+              <Text style={{ height: 35, fontSize:12, marginTop:5 }}>Canを用いて質問し、それにか関わる質問に答えている。</Text>
+              <Text style={{ height: 35, fontSize:12, marginTop:5 }}>Bを満たしていない.
+              </Text>
               
               <TouchableOpacity style={styles.buttonabsent}
                                 activeOpacity={0.2} 
@@ -396,13 +397,13 @@ class Modals extends React.Component<Props, State> {
 
           <View style={styles.imageperson}>
                   <Image style={{   width: 80, height: 80, }} 
-                        source={require('../assets/images/person-icon.jpg')}
+                        source={require('../assets/images/studentphoto.png')}
                     />
             </View>
 
           {/* ここから生徒情報 */}
           <View style={styles.studentname}>
-          <View><Text style={styles.studentnametitle}>#{this.state.studentNumber}   {this.state.studentName}</Text></View>
+          <View><Text style={styles.studentnametitle}>出席番号&nbsp;&nbsp;&nbsp;&nbsp;{this.state.studentNumber}   {this.state.studentName}</Text></View>
           </View>
 
 
@@ -474,7 +475,8 @@ const styles = StyleSheet.create({
 
   imageperson:{
     // backgroundColor:"black",
-    alignItems:"center"
+    alignItems:"center",
+    marginBottom:7,
 
 
   },
@@ -501,7 +503,8 @@ const styles = StyleSheet.create({
 
   recordingbox:{
    
-    alignItems:"center"
+    alignItems:"center",
+    marginBottom:65,
 
   },
 
@@ -660,7 +663,7 @@ const styles = StyleSheet.create({
               alignItems: 'center',
               justifyContent:'center',
               width:197,
-              height:35,
+              height:30,
               backgroundColor:'lightblue',
               margin:2
               },
@@ -670,7 +673,7 @@ const styles = StyleSheet.create({
 
             fontSize:18,
             color:'black',
-            margin:2    
+            margin:1   
               
             },
 
@@ -681,6 +684,7 @@ const styles = StyleSheet.create({
             notebox:{
             flexDirection: 'column',
             width:200,
+            height:100,
             justifyContent: 'space-between',
             padding:1
             },
@@ -690,8 +694,8 @@ const styles = StyleSheet.create({
             studentname:{
                 position: 'relative',
                 backgroundColor:'white',
-                height:50,
-                padding:2,
+                height:38,
+                padding:3,
                 justifyContent:'center',
                 // shadowColor:'black',
                 // shadowOffset:{width:0, height:2},
